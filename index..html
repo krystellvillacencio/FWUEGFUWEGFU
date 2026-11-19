@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHIAROSCURO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar" id="sidebar">
+
+    <!-- SIDEBAR LOGO -->
+    <div class="sidebar-brand">
+        <img src="logo/chiaroscuro-logo.png"
+             alt="Chiaroscuro Logo"
+             class="brand-logo">
+
+        <h1 class="logo">Chiaroscuro<span></span></h1>
+    </div>
+
+    <nav>
+            <nav>
+                <a href="#" class="active">⌂ Home</a>
+                <a href="#">⌕ Search</a>
+                <a href="#">𓆩♱𓆪 Your Library</a>
+            </nav>
+
+            <div class="sidebar-section">
+                <h3>Your Collection</h3>
+                <a href="#">𖤍 Beloved Melodies</a>
+                <a href="#">༒ The Musical Grimoire</a>
+                <a href="#">☠︎︎ Echoes of the Past</a>
+            </div>
+
+            <div class="sidebar-footer">
+                Your personal music archive.
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+            <button class="menu-toggle" 
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+        ☰   
+    </button>
+
+    <div class="navigation-buttons">
+        <button>&lt;</button>
+        <button>&gt;</button>
+    </div>
+
+    <input type="text" id="searchInput"
+           placeholder="Search your music...">
+
+    <div class="profile">IT</div>
+
+</header>
+
+            <!-- HOME -->
+            <section class="welcome">
+                <p class="subtitle">Thy Music, Thy Sanctuary.</p>
+                <h2>Enter the Realm of <span>Chiaroscuro</span></h2>
+                <p>Keep Thy Melodies Close.</p>
+            </section>
+
+            <!-- FEATURED -->
+            <section class="music-section">
+                <h2>The Musical Grimoire</h2>
+
+                <div class="song-grid" id="songGrid">
+                    <div class="empty-state">
+                        <div class="empty-icon">♫</div>
+                        <h3>Your library is waiting</h3>
+                        <p>Add your favorite songs in script.js.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- RIGHT PANEL: VIDEO + LYRICS -->
+        <aside class="right-panel">
+
+            <div class="video-section">
+                <p class="subtitle">Visualizer</p>
+                <h2>Now Playing</h2>
+
+                <div class="video-wrapper">
+                    <video id="videoClip" loop muted playsinline></video>
+                    <div class="video-overlay" id="videoOverlay">
+                        <button id="replayBtn" class="replay-button" title="Replay clip">↺</button>
+                    </div>
+                </div>
+
+                <div class="video-controls">
+                    <button id="videoPlayBtn" class="video-ctrl-btn">▶</button>
+                    <span id="videoLabel">Pick a song to watch its clip</span>
+                </div>
+            </div>
+
+            <section class="lyrics-section">
+                <div class="lyrics-header">
+                    <div>
+                        <p class="subtitle">Sing Along</p>
+                        <h2>Lyrics</h2>
+                    </div>
+                    <span id="lyricsSongTitle">No song playing</span>
+                </div>
+
+                <div class="lyrics-container" id="lyricsContainer">
+                    <p class="lyrics-placeholder">
+                        Your synchronized lyrics will appear here.
+                    </p>
+                </div>
+            </section>
+
+        </aside>
+
+    </div>
+
+    <!-- BOTTOM MUSIC PLAYER -->
+    <footer class="player">
+
+        <div class="now-playing">
+            <img id="playerCover"
+                src=""
+                alt="Album cover">
+
+            <div class="song-details">
+                <h4 id="playerTitle">No song selected</h4>
+                <p id="playerArtist">Choose a song to begin</p>
+            </div>
+        </div>
+
+        <div class="player-controls">
+            <div class="control-buttons">
+                <button id="shuffleBtn" 
+                class="shuffle-button"
+                title="Shuffle Songs">↳↰</button>
+
+                <button id="prevBtn">|◀</button>
+
+                <button id="playBtn"
+                class="play-button">▶</button>
+
+                <button id="nextBtn">▶|</button>
+
+                <button id="repeatBtn" 
+                class="repeat-button"
+                title="Repeat Songs">↻</button>
+            </div>
+
+            <div class="progress-area">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar"
+                    min="0" max="100" value="0">
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <div class="volume-area">
+            <span>♫</span>
+            <input type="range" id="volumeBar"
+                min="0" max="1" step="0.01" value="0.7">
+        </div>
+
+    </footer>
+
+    <audio id="audioPlayer"></audio>
+
+    <script src=".js"></script>
+</body>
+</html>
